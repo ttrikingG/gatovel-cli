@@ -1,6 +1,5 @@
 {
     "name": "gatovel/cli",
-    "version": "1.0.0",
     "description": "Command-line interface for Gatovel Framework",
     "type": "library",
     "require": {
