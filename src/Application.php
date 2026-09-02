@@ -5,6 +5,8 @@ namespace Gatovel\Cli;
 use Gatovel\Cli\commands\HelpCommand;
 use Gatovel\Cli\commands\VersionCommand;
 use Gatovel\Cli\commands\MakeControllerCommand;
+use Gatovel\Cli\commands\MigrateCommand;
+use Gatovel\Cli\commands\MigrateRollbackCommand;
 
 class Application
 {
@@ -32,6 +34,16 @@ class Application
         $this->registry->register(
             'make:controller',
             new MakeControllerCommand()
+        );
+
+        $this->registry->register(
+            'migrate',
+            new MigrateCommand()
+        );
+
+        $this->registry->register(
+            'migrate:rollback',
+            new MigrateRollbackCommand()
         );
     }
 
