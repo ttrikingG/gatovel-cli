@@ -7,6 +7,7 @@ use Gatovel\Cli\commands\VersionCommand;
 use Gatovel\Cli\commands\MakeControllerCommand;
 use Gatovel\Cli\commands\MigrateCommand;
 use Gatovel\Cli\commands\MigrateRollbackCommand;
+use Gatovel\Cli\commands\MakeMigrationCommand;
 
 class Application
 {
@@ -45,6 +46,11 @@ class Application
             'migrate:rollback',
             new MigrateRollbackCommand()
         );
+
+        $this->registry->register(
+            'make:migration', new MakeMigrationCommand()
+        );
+
     }
 
     public function run(array $arguments): int
