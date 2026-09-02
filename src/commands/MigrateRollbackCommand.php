@@ -3,7 +3,7 @@
 namespace Gatovel\Cli\commands;
 
 use Gatovel\Cli\Command;
-use nucleo\database\migration\MigrationRunner;
+use Gatovel\Database\migration\MigrationRunner;
 
 class MigrateRollbackCommand extends Command
 {
@@ -20,7 +20,7 @@ class MigrateRollbackCommand extends Command
     public function handle(array $arguments): int
     {
         try {
-            $directory = getcwd() . '/src/nucleo/database/migration';
+            $directory = getcwd() . '/src/database/migration';
 
             if (!is_dir($directory)) {
                 echo "Migration directory not found: {$directory}" . PHP_EOL;
