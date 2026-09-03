@@ -8,6 +8,7 @@ use Gatovel\Cli\commands\MakeControllerCommand;
 use Gatovel\Cli\commands\MigrateCommand;
 use Gatovel\Cli\commands\MigrateRollbackCommand;
 use Gatovel\Cli\commands\MakeMigrationCommand;
+use Gatovel\Cli\commands\SeedCommand;
 
 class Application
 {
@@ -49,6 +50,11 @@ class Application
 
         $this->registry->register(
             'make:migration', new MakeMigrationCommand()
+        );
+
+        $this->registry->register(
+            'db:seed',
+            new SeedCommand()
         );
 
     }
